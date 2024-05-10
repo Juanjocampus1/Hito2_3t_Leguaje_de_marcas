@@ -1,0 +1,88 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Title from '../components/Title.astro';
+import SpaceButton from "../components/SpaceButton.astro";
+import Resultados from "../components/Resultados.astro";
+import form from "../Data/form.json";
+---
+
+<Layout title="Encuesta">
+	<main class="flex flex-col h-screen justify-start items-center">
+		<div className="mt-0">
+			<Title />
+		</div>
+		<div class="flex-grow flex justify-center py-16">
+			<SpaceButton />
+			<ul class="app-card-list social-link-list">
+				{
+					form.map((form) => {
+						return (
+							<Resultados
+								Nombre={form.Nombre}
+								Edad={form.Edad}
+								Sexo={form.Sexo}
+								SistemaOperativo={form.SistemaOperativo}
+							/>
+						);
+					})
+				}
+			</ul>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	.app-card-list {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		grid-gap: 1rem;
+	}
+	.social-link-list {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		grid-gap: 1rem;
+	}
+	.social-link-list li {
+		list-style: none;
+	}
+	.social-link-list li a {
+		display: block;
+		padding: 1rem;
+		border-radius: 0.5rem;
+		background-color: #f3f4f6;
+		color: #000;
+		text-decoration: none;
+	}
+	.social-link-list li a:hover {
+		background-color: #e5e7eb;
+	}
+	.social-link-list li a h2 {
+		margin: 0;
+	}
+	.social-link-list li a p {
+		margin: 0;
+	}
+	.social-link-list li a img {
+		width: 100%;
+		border-radius: 0.5rem;
+	}
+	.social-link-list li a .social-link-list__description {
+		margin-top: 1rem;
+	}
+	.social-link-list li a .social-link-list__description p {
+		margin: 0;
+	}
+	.social-link-list li a .social-link-list__description p:first-child {
+		margin-top: 0;
+	}
+	.social-link-list li a .social-link-list__description p:last-child {
+		margin-bottom: 0;
+	}
+	.social-link-list li a .social-link-list__description p a {
+		color: #000;
+	}
+	.social-link-list li a .social-link-list__description p a:hover {
+		color: #000;
+		text-decoration: underline;
+	}
+</style>

@@ -1,0 +1,63 @@
+---
+export interface Props {
+    ['Marca temporal']: string;
+    ['Nombre']: string;
+    ['Edad']: number;
+    ['Sexo']: string;
+    ['Que sistema operativo usas']: string;
+    ['Conoces la diferencia entre windows y linux, explicala']: string;
+    ['te has preguntado alguna vez como hablamos con las maquinas, como crees que se hace']: string;
+    ['conoces algún lenguaje de programación, si es así cuales']: string;
+    ['estarias dispuesto a aprender un leguaje de programcion que te ayude en tu dia a dia']: string;
+    ['¿te preocupa el rapido avance de la inteligencia artificial?¿porque?']: string;
+    ['¿Crees que esta podria acabar con los desarrolladores de software a largo y corto plazo, si es asi porque?']: string;
+}
+
+const {
+    time = ['Marca temporal'],
+    Nombre = ['Nombre'],
+    Edad = ['Edad'],
+    Sexo = ['Sexo'],
+    SistemaOperativo = ['Que sistema operativo usas'],
+    Diferencia = ['Conoces la diferencia entre windows y linux, explicala'],
+    Hablamos = ['te has preguntado alguna vez como hablamos con las maquinas, como crees que se hace'],
+    Lenguaje = ['conoces algún lenguaje de programación, si es así cuales'],
+    Aprender = ['estarias dispuesto a aprender un leguaje de programcion que te ayude en tu dia a dia'],
+    Preocupacion = ['¿te preocupa el rapido avance de la inteligencia artificial?¿porque?'],
+    Desarrolladores = ['¿Crees que esta podria acabar con los desarrolladores de software a largo y corto plazo, si es asi porque?']
+} = Astro.props;
+---
+
+    <li class="text-white">
+        <h2 class="social-title">
+            Nombre:
+            {Nombre}
+        </h2>
+        <p class="social-body">
+            <strong>Edad:</strong> {Edad} años
+        </p>
+        <p class="social-body">
+            <strong>Sexo:</strong> {Sexo}
+        </p>
+        <p class="social-body">
+            <strong>Sistema Operativo:</strong> {SistemaOperativo}
+        </p>
+        <p class="social-body">
+            <strong>¿Conoces la diferencia entre windows y linux?, explicala:</strong> {Diferencia}
+        </p>
+        <p class="social-body">
+            <strong>¿Te has preguntado alguna vez como hablamos con las maquinas, como crees que se hace?:</strong> {Hablamos}
+        </p>
+        <p class="social-body">
+            <strong>¿Conoces algún lenguaje de programación, si es así cuales?:</strong> {Lenguaje}
+        </p>
+        <p class="social-body">
+            <strong>¿Estarías dispuesto a aprender un lenguaje de programación que te ayude en tu día a día?:</strong> {Aprender}
+        </p>
+        <p class="social-body">
+            <strong>¿Te preocupa el rápido avance de la inteligencia artificial?, ¿por qué?:</strong> {Preocupacion}
+        </p>
+        <p class="social-body">
+            <strong>¿Crees que esta podría acabar con los desarrolladores de software a largo y corto plazo, si es así, ¿por qué?:</strong> {Desarrolladores}
+        </p>
+    </li>
