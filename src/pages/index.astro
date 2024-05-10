@@ -9,10 +9,14 @@ import form from "../Data/form.json";
 <Layout title="Encuesta">
 	<main class="flex flex-col h-screen justify-start items-center">
 		<div className="mt-0">
-			<Title />
+			<Title
+				title="Resultados de la encuesta"
+			/>
 		</div>
 		<div class="flex-grow flex justify-center py-16">
 			<SpaceButton />
+		</div>
+		<div class="flex-grow">
 			<ul class="app-card-list social-link-list">
 				{
 					form.map((form) => {

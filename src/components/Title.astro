@@ -1,6 +1,16 @@
+---
+export interface Props{
+    title: string;
+}
 
+const {
+    title = null
+} = Astro.props;
+---
 <div class="title">
-    Hito de Lenguaje de Marcas
+    <h2>
+        {title}
+    </h2>
 </div>
 
 <style>
