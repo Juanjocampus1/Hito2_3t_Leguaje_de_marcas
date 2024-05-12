@@ -1,63 +1,107 @@
 ---
 export interface Props {
-    ['Marca temporal']: string;
-    ['Nombre']: string;
-    ['Edad']: number;
-    ['Sexo']: string;
-    ['Que sistema operativo usas']: string;
-    ['Conoces la diferencia entre windows y linux, explicala']: string;
-    ['te has preguntado alguna vez como hablamos con las maquinas, como crees que se hace']: string;
-    ['conoces algún lenguaje de programación, si es así cuales']: string;
-    ['estarias dispuesto a aprender un leguaje de programcion que te ayude en tu dia a dia']: string;
-    ['¿te preocupa el rapido avance de la inteligencia artificial?¿porque?']: string;
-    ['¿Crees que esta podria acabar con los desarrolladores de software a largo y corto plazo, si es asi porque?']: string;
+    time: string;
+    Nombre: string;
+    Edad: number;
+    sexo: string;
+    SistemaOperativo: string;
+    Diferencia: string;
+    Hablamos: string;
+    Lenguaje: string;
+    Aprender: string;
+    Preocupacion: string;
+    Desarrolladores: string;
 }
 
 const {
-    time = ['Marca temporal'],
-    Nombre = ['Nombre'],
-    Edad = ['Edad'],
-    Sexo = ['Sexo'],
-    SistemaOperativo = ['Que sistema operativo usas'],
-    Diferencia = ['Conoces la diferencia entre windows y linux, explicala'],
-    Hablamos = ['te has preguntado alguna vez como hablamos con las maquinas, como crees que se hace'],
-    Lenguaje = ['conoces algún lenguaje de programación, si es así cuales'],
-    Aprender = ['estarias dispuesto a aprender un leguaje de programcion que te ayude en tu dia a dia'],
-    Preocupacion = ['¿te preocupa el rapido avance de la inteligencia artificial?¿porque?'],
-    Desarrolladores = ['¿Crees que esta podria acabar con los desarrolladores de software a largo y corto plazo, si es asi porque?']
+    time,
+    Nombre,
+    Edad,
+    sexo,
+    SistemaOperativo,
+    Diferencia,
+    Hablamos ,
+    Lenguaje ,
+    Aprender ,
+    Preocupacion ,
+    Desarrolladores
 } = Astro.props;
 ---
 
-    <li class="text-white">
-        <h2 class="social-title">
-            Nombre:
+    <li class="bg-white rounded-lg shadow-md p-6 transition-all duration-200 ease-in-out transform hover:scale-105">
+        <h2 class="text-xl font-bold mb-2">
+            <strong>
+                Nombre:
+            </strong>
             {Nombre}
         </h2>
         <p class="social-body">
-            <strong>Edad:</strong> {Edad} años
+            <strong>
+                Edad:
+            </strong>
+            {Edad} años
         </p>
         <p class="social-body">
-            <strong>Sexo:</strong> {Sexo}
+            <strong>
+                Sexo:
+            </strong>
+            {sexo}
         </p>
         <p class="social-body">
-            <strong>Sistema Operativo:</strong> {SistemaOperativo}
+            <strong>
+                Sistema Operativo:
+            </strong>
+            {SistemaOperativo}
         </p>
         <p class="social-body">
-            <strong>¿Conoces la diferencia entre windows y linux?, explicala:</strong> {Diferencia}
+            <strong>
+                ¿Conoces la diferencia entre windows y linux?, explicala:
+            </strong>
+            {Diferencia}
         </p>
         <p class="social-body">
-            <strong>¿Te has preguntado alguna vez como hablamos con las maquinas, como crees que se hace?:</strong> {Hablamos}
+            <strong>
+                ¿Te has preguntado alguna vez como hablamos con las maquinas, como crees que se hace?:
+            </strong>
+            {Hablamos}
         </p>
         <p class="social-body">
-            <strong>¿Conoces algún lenguaje de programación, si es así cuales?:</strong> {Lenguaje}
+            <strong>
+                ¿Conoces algún lenguaje de programación, si es así cuales?:
+            </strong>
+            {Lenguaje}
         </p>
         <p class="social-body">
-            <strong>¿Estarías dispuesto a aprender un lenguaje de programación que te ayude en tu día a día?:</strong> {Aprender}
+            <strong>
+                ¿Estarías dispuesto a aprender un lenguaje de programación que te ayude en tu día a día?:</strong>
+            {Aprender}
         </p>
         <p class="social-body">
-            <strong>¿Te preocupa el rápido avance de la inteligencia artificial?, ¿por qué?:</strong> {Preocupacion}
+            <strong>
+                ¿Te preocupa el rápido avance de la inteligencia artificial?, ¿por qué?:
+            </strong>
+            {Preocupacion}
         </p>
         <p class="social-body">
-            <strong>¿Crees que esta podría acabar con los desarrolladores de software a largo y corto plazo, si es así, ¿por qué?:</strong> {Desarrolladores}
+            <strong>
+                ¿Crees que esta podría acabar con los desarrolladores de software a largo y corto plazo, si es así, ¿por qué?:
+            </strong>
+            {Desarrolladores}
         </p>
     </li>
+
+<style>
+    li {
+        border: 4px solid #003380; /* Borde morado */
+        box-shadow: 0 0 10px #2927b0; /* Sombra morada alrededor de la tarjeta */
+        margin: 20px; /* Espacio entre las tarjetas */
+        transition: all 0.3s ease-in-out; /* Transición suave */
+    }
+
+    li:hover {
+        box-shadow: 0 0 20px #2730b0, /* Sombra morada más grande alrededor de la tarjeta */
+        0 0 30px #2730b0, /* Sombra morada aún más grande alrededor de la tarjeta */
+        0 0 40px #3727b0; /* Sombra morada muy grande alrededor de la tarjeta para el efecto de brillo */
+        transform: scale(1.05); /* Hacer la tarjeta un poco más grande */
+    }
+</style>
